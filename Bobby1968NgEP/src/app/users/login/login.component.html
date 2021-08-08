@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-4">
+        <h1>Login</h1>
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+
+            <div class="mb-4">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input ngModel required email #emailInput="ngModel" name="email" type="email" class="form-control"
+                    id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <ng-container *ngIf="emailInput.touched && emailInput.invalid">
+                <div *ngIf="emailInput.errors?.required" style="background-color: rgb(255, 133, 133);">Email is
+                    required!</div>
+                <div *ngIf="emailInput.errors?.email" style="background-color: rgb(255, 133, 133);">Email is invalid!
+                </div>
+            </ng-container>
+
+            <div class="mb-4">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input ngModel required minlength="3" #passwordInput="ngModel" name="password" type="password" class="form-control"
+                    id="exampleInputPassword1">
+            </div>
+            <ng-container *ngIf="passwordInput.touched && passwordInput.invalid">
+                <div *ngIf="passwordInput.errors?.required" style="background-color: rgb(255, 133, 133);">Password is
+                    required!</div>
+                <div *ngIf="passwordInput.errors?.minlength" style="background-color: rgb(255, 133, 133);">Password should
+                    be 3 chars minimum!</div>
+            </ng-container>
+
+            <button type="submit" class="btn btn-primary">Login</button>
+
+        </form>
+    </div>
+</div>
