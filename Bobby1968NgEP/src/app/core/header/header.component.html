@@ -36,8 +36,8 @@
             <p class="logo"><span class="logo">"Топлофикация Русе" АД</span></p>
         </div>
         <div class="mini-navbar">
-            <!-- <ul *ngIf="!isLogged"> -->
-            <ul *ngIf="true">
+            <ul *ngIf="!isLogged">
+            <!-- <ul *ngIf="true"> -->
                 <li>
                     <a routerLink="/login">Login</a>
                 </li>
@@ -45,19 +45,19 @@
                     <a routerLink="/register">Register</a>
                 </li>
                 <li>
-                    <!-- <a routerLink="/profile">{{username}}'s profile</a> -->
-                    <a routerLink="/profile">Username's profile</a>
+                    <a routerLink="/profile">{{username}}'s profile</a>
+                    <!-- <a routerLink="/profile">Username's profile</a> -->
                 </li>
             </ul>
-            <!-- <ul *ngIf="isLogged"> -->
-            <ul *ngIf="false">
+            <ul *ngIf="isLogged">
+            <!-- <ul *ngIf="false"> -->
                 <li>
-                    <!-- <a routerLink="/profile">{{username}}'s profile</a> -->
-                    <a routerLink="/profile">Username's profile</a>
+                    <a routerLink="/profile">{{username}}'s profile</a>
+                    <!-- <a routerLink="/profile">Username's profile</a> -->
                 </li>
                 <li>
-                    <!-- <a (click)="logout()">Logout</a> -->
-                    <a href="">Logout</a>
+                    <a (click)="logout()">Logout</a>
+                    <!-- <a href="">Logout</a> -->
                 </li>
             </ul>
         </div>

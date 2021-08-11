@@ -1,17 +1,21 @@
 <div class="row justify-content-center">
     <div class="col-4">
         <h1>Login</h1>
-        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <form #loginForm="ngForm" (ngSubmit)="loggingIn(loginForm)">
+        <!-- <form #loginForm="ngForm" > -->
+            <!-- <ng-container *ngIf="loginForm.submit && loginForm.invalid">
+                The Form is not valid!
+            </ng-container> -->
 
             <div class="mb-4">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input ngModel required email #emailInput="ngModel" name="email" type="email" class="form-control"
+                <input ngModel required email #login="ngModel" name="login" type="email" class="form-control"
                     id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
-            <ng-container *ngIf="emailInput.touched && emailInput.invalid">
-                <div *ngIf="emailInput.errors?.required" style="background-color: rgb(255, 133, 133);">Email is
+            <ng-container *ngIf="login.touched && login.invalid">
+                <div *ngIf="login.errors?.required" style="background-color: rgb(255, 133, 133);">Email is
                     required!</div>
-                <div *ngIf="emailInput.errors?.email" style="background-color: rgb(255, 133, 133);">Email is invalid!
+                <div *ngIf="login.errors?.email" style="background-color: rgb(255, 133, 133);">Email is invalid!
                 </div>
             </ng-container>
 
