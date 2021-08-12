@@ -28,8 +28,8 @@ export class LoginComponent {
     // let password = form.value.password;
     // const data: any { login, password };
     let { login, password } = form.value;
-    console.log(login, password);
-    console.log(form.value);
+    // console.log(login, password);
+    // console.log(form.value);
     // login = "b.a.stanchev@gmail.com";
     this.userService.login({ login, password }).subscribe(
       {
@@ -38,11 +38,10 @@ export class LoginComponent {
         // this.router.navigate([redirectUrl]);
         this.router.navigate(['/']);
       },
-      error: (err) => {
+      error: (err) => { 
         console.log(err);
       }
-    }
-    );
+    });
   }
 
 }

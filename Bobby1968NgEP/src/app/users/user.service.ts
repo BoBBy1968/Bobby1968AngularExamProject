@@ -37,4 +37,11 @@ export class UserService {
       );
   }
 
+  register(data: { name: string; email: string; password: string }) {
+    return this.http.post<IUser>(`${apiURL}/users/register`, data, { withCredentials: false })
+      .pipe(
+        tap((user) => this.user = user)
+      );
+  }
+
 }

@@ -14,7 +14,7 @@ export class HeaderComponent {
   }
 
   get username(): string{
-    return this.userService.user?.name || '';
+    return this.userService.user?.name || 'NoUser';
   }
 
   constructor(
