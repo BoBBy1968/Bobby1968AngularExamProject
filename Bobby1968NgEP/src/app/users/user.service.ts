@@ -13,6 +13,7 @@ const apiURL = environment.apiURL;
 export class UserService {
 
   user: IUser | null| undefined = undefined;
+  
 
   get isLogged(): boolean {
     return !!this.user;
@@ -26,14 +27,15 @@ export class UserService {
   login(data: {login: string; password: string}) {
     return this.http.post<IUser>(`${apiURL}/users/login`, data, { withCredentials: false })
       .pipe(
-        tap((user) => this.user = user)
+        tap((user) => this.user = user),
+        // sessionStorage.setItem('email', this.user?.email),
       );
   }
 
   logout() {
-    return this.http.post<IUser>(`${apiURL}/logout`, {}, { withCredentials: true })
+    return this.http.get<IUser>(`${apiURL}/users/logout`)
       .pipe(
-        tap(() => this.user = null)
+        tap(() => this.user = undefined)
       );
   }
 
