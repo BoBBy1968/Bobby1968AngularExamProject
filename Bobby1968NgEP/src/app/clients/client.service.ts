@@ -25,7 +25,7 @@ export class ClientService {
   }
 
   getAllClients(){
-    return this.http.get<IClient[]>(`${apiURL}/data/clients`);
+    return this.http.get<IClient[]>(`${apiURL}/data/clients?sortBy=created%20desc`);
   }
 
 }
