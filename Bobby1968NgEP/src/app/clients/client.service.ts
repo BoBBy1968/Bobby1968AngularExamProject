@@ -19,9 +19,13 @@ export class ClientService {
 
   create(data: { firstName: string; lastName: string; egn: string; address: string }) {
     return this.http.post<IClient>(`${apiURL}/data/clients`, data)
-      .pipe(
-        tap((client) => this.client = client)
-      );
+      // .pipe(
+      //   tap((client) => this.client = client)
+      // );
+  }
+
+  getAllClients(){
+    return this.http.get<IClient[]>(`${apiURL}/data/clients`);
   }
 
 }

@@ -1,6 +1,7 @@
 export interface IClient{
-    firstName: string;
-    lastName: string;
-    egn: string;
-    address: string;
+    FirstName: string;
+    LastName: string;
+    EGN: string;
+    Address: string;
+    objectId: string;
 }
