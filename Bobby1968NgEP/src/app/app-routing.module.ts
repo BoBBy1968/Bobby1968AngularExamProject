@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AllComponent } from './clients/all/all.component';
+import { NewComponent } from './clients/new/new.component';
 import { HomeComponent } from './core/home/home.component';
 import { LoginComponent } from './users/login/login.component';
 import { ProfileComponent } from './users/profile/profile.component';
@@ -26,6 +28,14 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent
+  },
+  {
+    path: 'clients',
+    component: AllComponent
+  },
+  {
+    path: 'new-client',
+    component: NewComponent
   },
   // {
   //   path: '**',

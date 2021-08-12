@@ -11,6 +11,9 @@ import { ProfileComponent } from './users/profile/profile.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './users/user.service';
 import { HomeComponent } from './core/home/home.component';
+import { AllComponent } from './clients/all/all.component';
+import { NewComponent } from './clients/new/new.component';
+import { ClientService } from './clients/client.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { HomeComponent } from './core/home/home.component';
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
-    HomeComponent
+    HomeComponent,
+    AllComponent,
+    NewComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,8 @@ import { HomeComponent } from './core/home/home.component';
     {
       provide: UserService
       // useClass: UserService
-    }
+    },
+    ClientService
   ],
   bootstrap: [AppComponent]
 })

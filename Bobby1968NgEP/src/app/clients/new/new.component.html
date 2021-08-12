@@ -1,0 +1,62 @@
+<p>new works!</p>
+<div class="row justify-content-center">
+    <div class="col-4">
+        <h1>Create new Client</h1>
+        <form #createClient="ngForm" (ngSubmit)="create(createClient)">
+
+            <div class="mb-4">
+                <label for="exampleInputEmail1" class="form-label">First Name</label>
+                <input ngModel required minlength="3" #firstNameInput="ngModel" name="firstName" type="email" class="form-control"
+                    id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <ng-container *ngIf="firstNameInput.touched && firstNameInput.invalid">
+                <div *ngIf="firstNameInput.errors?.required" style="background-color: rgb(255, 133, 133);">First Name is
+                    required!</div>
+                <div *ngIf="firstNameInput.errors?.minlength" style="background-color: rgb(255, 133, 133);">First Name must be 3 chars minimum</div>
+            </ng-container>
+
+            <div class="mb-4">
+                <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                <input ngModel required minlength="3" #lastNameInput="ngModel" name="lastName" type="text"
+                    class="form-control" aria-describedby="Username">
+            </div>
+            <ng-container *ngIf="lastNameInput.touched && lastNameInput.invalid">
+                <div *ngIf="lastNameInput.errors?.required" style="background-color: rgb(255, 133, 133);">Last Name is
+                    required!</div>
+                <div *ngIf="lastNameInput.errors?.minlength" style="background-color: rgb(255, 133, 133);">Last Name must
+                    be 3 chars!</div>
+            </ng-container>
+
+            <div class="mb-4">
+                <label for="exampleInputPassword1" class="form-label">EGN</label>
+                <input ngModel required minlength="10" #egnInput="ngModel" name="egn" type="text"
+                    class="form-control" id="exampleInputPassword1">
+            </div>
+            <ng-container *ngIf="egnInput.touched && egnInput.invalid">
+                <div *ngIf="egnInput.errors?.required" style="background-color: rgb(255, 133, 133);">EGN is
+                    required!</div>
+                <div *ngIf="egnInput.errors?.minlength" style="background-color: rgb(255, 133, 133);">EGN should
+                    be 10 chars!</div>
+            </ng-container>
+
+            <div class="mb-4">
+                <label for="confirmPassword" class="form-label">Address</label>
+                <input ngModel required minlength="3" #AddressInput="ngModel" name="address" type="text"
+                    class="form-control" id="confirmPassword">
+            </div>
+            <ng-container *ngIf="AddressInput.touched">
+                <div *ngIf="AddressInput.errors?.required" style="background-color: rgb(255, 133, 133);">Password confirm
+                    is required!</div>
+                <div *ngIf="AddressInput.errors?.minlength" style="background-color: rgb(255, 133, 133);">Password should
+                    be 3 chars minimum!</div>
+            </ng-container>
+
+            <button type="submit" class="btn btn-primary">Create Client</button>
+            <!-- <div>
+                <p>Have an account?</p> 
+                <a routerLink="/login">Login</a>
+            </div> -->
+
+        </form>
+    </div>
+</div>
