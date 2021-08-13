@@ -14,6 +14,7 @@ import { HomeComponent } from './core/home/home.component';
 import { AllComponent } from './clients/all/all.component';
 import { NewComponent } from './clients/new/new.component';
 import { ClientService } from './clients/client.service';
+import { EditComponent } from './clients/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ClientService } from './clients/client.service';
     ProfileComponent,
     HomeComponent,
     AllComponent,
-    NewComponent
+    NewComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AllComponent } from './clients/all/all.component';
+import { EditComponent } from './clients/edit/edit.component';
 import { NewComponent } from './clients/new/new.component';
 import { HomeComponent } from './core/home/home.component';
 import { LoginComponent } from './users/login/login.component';
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'clients',
     component: AllComponent
+  },
+  {
+    path: 'clients/:objectId',
+    component: EditComponent
   },
   {
     path: 'new-client',
