@@ -24,6 +24,20 @@ export class ClientService {
       // );
   }
 
+  // updateProfile(data: { username: string; email: string; tel: string; }) {
+  //   return this.http.put<IUser>(`${apiURL}/users/profile`, data, { withCredentials: true })
+  //     .pipe(
+  //       tap((user) => this.user = user)
+  //     );
+  // }
+  
+  editClient(data: { firstName: string; lastName: string; egn: string; address: string }, id: string) {
+    return this.http.put<IClient>(`${apiURL}/data/clients/${id}`, data)
+      // .pipe(
+      //   tap((client) => this.client = client)
+      // );
+  }
+
   getAllClients(){
     return this.http.get<IClient[]>(`${apiURL}/data/clients?sortBy=created%20desc`);
   }

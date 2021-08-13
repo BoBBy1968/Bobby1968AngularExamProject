@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IClient } from 'src/app/interfaces/client';
 import { ClientService } from '../client.service';
 
@@ -15,7 +15,8 @@ export class EditComponent implements OnInit {
 
   constructor(
     private clientService: ClientService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
   ) {
     this.getClient();
    }
@@ -24,15 +25,29 @@ export class EditComponent implements OnInit {
   }
 
   edit(form: NgForm){
+    if (form.invalid) {
+      console.log("The form is not valid!");
+      return;
+    }
+    let { firstName, lastName, egn, address } = form.value;
+    console.log(firstName, lastName, egn, address);
+
     //TODO: here comes the code that sends changes to content Service
+    const id = this.activatedRoute.snapshot.params.objectId;
+    this.clientService.editClient({ firstName, lastName, egn, address }, id).subscribe({
+      next: () => {
+        this.router.navigate(['/clients']);
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
   }
 
   getClient(){
-    //TODO: here comes the code fetching the client
     this.client = undefined;
     const id = this.activatedRoute.snapshot.params.objectId;
     this.clientService.getClient(id).subscribe(client => this.client = client);
-    
   }
 
 }

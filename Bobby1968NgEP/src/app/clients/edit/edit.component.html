@@ -7,7 +7,7 @@
             <div class="mb-4">
                 <label for="exampleInputEmail1" class="form-label">First Name {{client.FirstName}}</label>
                 <input ngModel required minlength="3" #firstNameInput="ngModel" name="firstName" type="email" class="form-control"
-                    id="exampleInputEmail1" aria-describedby="emailHelp" >
+                    id="exampleInputEmail1" aria-describedby="emailHelp" [ngModel]="client.FirstName">
             </div>
             <ng-container *ngIf="firstNameInput.touched && firstNameInput.invalid">
                 <div *ngIf="firstNameInput.errors?.required" style="background-color: rgb(255, 133, 133);">First Name is
@@ -18,7 +18,7 @@
             <div class="mb-4">
                 <label for="exampleInputEmail1" class="form-label">Last Name</label>
                 <input ngModel required minlength="3" #lastNameInput="ngModel" name="lastName" type="text"
-                    class="form-control" aria-describedby="Username">
+                    class="form-control" aria-describedby="lastName" [ngModel]="client.LastName">
             </div>
             <ng-container *ngIf="lastNameInput.touched && lastNameInput.invalid">
                 <div *ngIf="lastNameInput.errors?.required" style="background-color: rgb(255, 133, 133);">Last Name is
@@ -30,7 +30,7 @@
             <div class="mb-4">
                 <label for="exampleInputPassword1" class="form-label">EGN</label>
                 <input ngModel required minlength="10" #egnInput="ngModel" name="egn" type="text"
-                    class="form-control" id="exampleInputPassword1">
+                    class="form-control" id="exampleInputPassword1" [ngModel]="client.EGN">
             </div>
             <ng-container *ngIf="egnInput.touched && egnInput.invalid">
                 <div *ngIf="egnInput.errors?.required" style="background-color: rgb(255, 133, 133);">EGN is
@@ -40,9 +40,9 @@
             </ng-container>
 
             <div class="mb-4">
-                <label for="confirmPassword" class="form-label">Address</label>
+                <label for="address" class="form-label">Address</label>
                 <input ngModel required minlength="3" #AddressInput="ngModel" name="address" type="text"
-                    class="form-control" id="confirmPassword">
+                    class="form-control" id="address" [ngModel]="client.Address">
             </div>
             <ng-container *ngIf="AddressInput.touched">
                 <div *ngIf="AddressInput.errors?.required" style="background-color: rgb(255, 133, 133);">Password confirm
