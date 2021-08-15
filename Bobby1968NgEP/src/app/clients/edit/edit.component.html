@@ -1,18 +1,36 @@
 <p>edit works!</p>
+
+<div *ngIf="!toEdit && client" class="row justify-content-center">
+    <h1 class="row justify-content-center">Details</h1>
+    <h4 class="row justify-content-center"> for {{client.FirstName}} {{client.LastName}}</h4>
+    <!-- <h2>{{theme.themeName}}</h2> -->
+    <!-- <p>Date: <time>{{theme.created_at}}</time></p> -->
+    <p><span class="title">FirstName:</span> <span class="client-value">{{client?.FirstName}}</span> <span class="title">LastName:</span>
+        <span class="client-value">{{client?.LastName}}</span></p>
+
+    <p><span class="title">EGN:</span> <span class="client-value">{{client?.EGN}}</span> <span class="title">Address:</span>
+        <span class="client-value">{{client?.Address}}</span></p>
+    <br>
+    <button class="btn btn-primary detail" (click)="toEdit=true">Edit client</button>
+    <button routerLink="/clients" class="btn btn-primary detail">Cancel</button>
+</div>
+
 <div class="row justify-content-center">
-    <div class="col-4" *ngIf="client">
+    <div class="col-4" *ngIf="client && toEdit">
         <h1>Edit Client</h1>
         <form #editClient="ngForm" (ngSubmit)="edit(editClient)">
 
             <div class="mb-4">
-                <label for="exampleInputEmail1" class="form-label">First Name {{client.FirstName}}</label>
-                <input ngModel required minlength="3" #firstNameInput="ngModel" name="firstName" type="email" class="form-control"
-                    id="exampleInputEmail1" aria-describedby="emailHelp" [ngModel]="client.FirstName">
+                <label for="exampleInputEmail1" class="form-label">First Name</label>
+                <input ngModel required minlength="3" #firstNameInput="ngModel" name="firstName" type="email"
+                    class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    [ngModel]="client.FirstName">
             </div>
             <ng-container *ngIf="firstNameInput.touched && firstNameInput.invalid">
                 <div *ngIf="firstNameInput.errors?.required" style="background-color: rgb(255, 133, 133);">First Name is
                     required!</div>
-                <div *ngIf="firstNameInput.errors?.minlength" style="background-color: rgb(255, 133, 133);">First Name must be 3 chars minimum</div>
+                <div *ngIf="firstNameInput.errors?.minlength" style="background-color: rgb(255, 133, 133);">First Name
+                    must be 3 chars minimum</div>
             </ng-container>
 
             <div class="mb-4">
@@ -23,14 +41,15 @@
             <ng-container *ngIf="lastNameInput.touched && lastNameInput.invalid">
                 <div *ngIf="lastNameInput.errors?.required" style="background-color: rgb(255, 133, 133);">Last Name is
                     required!</div>
-                <div *ngIf="lastNameInput.errors?.minlength" style="background-color: rgb(255, 133, 133);">Last Name must
+                <div *ngIf="lastNameInput.errors?.minlength" style="background-color: rgb(255, 133, 133);">Last Name
+                    must
                     be 3 chars!</div>
             </ng-container>
 
             <div class="mb-4">
                 <label for="exampleInputPassword1" class="form-label">EGN</label>
-                <input ngModel required minlength="10" #egnInput="ngModel" name="egn" type="text"
-                    class="form-control" id="exampleInputPassword1" [ngModel]="client.EGN">
+                <input ngModel required minlength="10" #egnInput="ngModel" name="egn" type="text" class="form-control"
+                    id="exampleInputPassword1" [ngModel]="client.EGN">
             </div>
             <ng-container *ngIf="egnInput.touched && egnInput.invalid">
                 <div *ngIf="egnInput.errors?.required" style="background-color: rgb(255, 133, 133);">EGN is
@@ -45,13 +64,19 @@
                     class="form-control" id="address" [ngModel]="client.Address">
             </div>
             <ng-container *ngIf="AddressInput.touched">
-                <div *ngIf="AddressInput.errors?.required" style="background-color: rgb(255, 133, 133);">Password confirm
+                <div *ngIf="AddressInput.errors?.required" style="background-color: rgb(255, 133, 133);">Password
+                    confirm
                     is required!</div>
-                <div *ngIf="AddressInput.errors?.minlength" style="background-color: rgb(255, 133, 133);">Password should
+                <div *ngIf="AddressInput.errors?.minlength" style="background-color: rgb(255, 133, 133);">Password
+                    should
                     be 3 chars minimum!</div>
             </ng-container>
 
-            <button type="submit" class="btn btn-primary">Edit Client</button>
+            <div>
+                <button type="submit" class="btn btn-primary edit">Edit Client</button>
+                <!-- <br> -->
+                <button routerLink="/clients" class="btn btn-primary edit">Cancel</button>
+            </div>
             <!-- <div>
                 <p>Have an account?</p> 
                 <a routerLink="/login">Login</a>

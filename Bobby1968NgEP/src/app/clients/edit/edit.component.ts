@@ -12,6 +12,7 @@ import { ClientService } from '../client.service';
 export class EditComponent implements OnInit {
 
   client: IClient | undefined;
+  toEdit: boolean = false;
 
   constructor(
     private clientService: ClientService,

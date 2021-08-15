@@ -1,0 +1,32 @@
+button.edit, button.detail {
+    margin-left: 10px;
+}
+
+button.detail{
+    max-width: 20%;
+    margin-top: 50px;
+}
+
+p{
+    margin-left: 40%;
+    /* background-color: yellowgreen; */
+}
+
+span.title {
+    background-color: rgb(245, 245, 233);
+    margin-right: 10px;
+    margin-left: 10px;
+    font-weight: 400;
+}
+
+span.client-value {
+    background-color: rgb(138, 237, 255);
+    background: linear-gradient(90deg, rgb(255, 251, 15) 0%, rgb(255, 34, 34) 35%, rgb(27, 221, 235) 100%);
+    color: black;
+    font-weight: 700;
+}
+
+h4{
+    margin-bottom: 50px;
+    text-decoration: underline;
+}

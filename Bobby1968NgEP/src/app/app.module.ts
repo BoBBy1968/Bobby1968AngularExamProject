@@ -15,6 +15,7 @@ import { AllComponent } from './clients/all/all.component';
 import { NewComponent } from './clients/new/new.component';
 import { ClientService } from './clients/client.service';
 import { EditComponent } from './clients/edit/edit.component';
+import { NotFoundComponent } from './core/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EditComponent } from './clients/edit/edit.component';
     HomeComponent,
     AllComponent,
     NewComponent,
-    EditComponent
+    EditComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
