@@ -7,7 +7,7 @@ button.detail{
     margin-top: 50px;
 }
 
-p{
+p.data{
     margin-left: 40%;
     /* background-color: yellowgreen; */
 }
@@ -29,4 +29,101 @@ span.client-value {
 h4{
     margin-bottom: 50px;
     text-decoration: underline;
+}
+
+div.loading,
+p.loading{
+    display: inline;
+    font-size: 34px;
+    /* margin: 0px auto; */
+    background-color: greenyellow;
+}
+
+/* -----------css for the edit aside------------------------------ */
+/* @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+aside {
+    background: rgb(0, 128, 182);
+    background: linear-gradient(0deg, rgb(159, 198, 243) 0%, rgb(113, 224, 191) 35%, rgb(122, 245, 177) 100%);
+    margin: 0px;
+    padding: 0px;
+    width: 20%;
+    padding-right: 15px;
+    margin-right: 15px;
+    float: left;
+    height: 100vh;
+}
+
+aside ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    margin: auto;
+}
+
+aside ul span {
+    color: white;
+    padding: 0.5em;
+}
+
+.mini-navbar ul {
+    border: 1px solid #00d4ff;
+    border-radius: 0.3em;
+    padding-left: 0;
+    width: 100%;
+}
+
+aside li {
+    list-style: none;
+    margin: .35em;
+    padding: 0 .95em;
+}
+
+aside a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+nav {
+    border-top: 1px solid #00acf4;
+}
+
+.logo {
+    font-size: 2em;
+    color: white;
+    padding-bottom: 0;
+    text-align: center;
+}
+
+.logo-wrap {
+    font-family: 'Abril Fatface', cursive;
+    /* letter-spacing: .5em; */
+    /* margin: 0.5em 0; */
+    width: 100%;
+}
+
+.mini-navbar-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 75%; */
+    /* margin: auto; */
+}
+
+/* mini-navbar */
+
+.mini-navbar ul {
+    background-color: #807918;
+    /* background-color: transparent; */
+    border-radius: 5px;
+}
+
+.mini-navbar ul li+li {
+    border-left: 1px solid lightgrey;
+    padding-left: .5em;
 }

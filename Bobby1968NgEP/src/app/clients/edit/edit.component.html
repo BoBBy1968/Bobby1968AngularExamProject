@@ -1,14 +1,44 @@
-<p>edit works!</p>
+<!-- <nav class="navbar fixed-bottom navbar-light bg-light">
+    <a class="navbar-brand" href="#">Fixed bottom</a>
+  </nav> -->
+<aside>
+    <div class="mini-navbar-wrap">
+        <div class="logo-wrap">
+            <p class="logo"><ng-container class="logo">Извършване на действия</ng-container></p>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li>
+                <a routerLink="/home">Home</a>
+            </li>
+            <li>
+            <!-- <li *ngIf="isLogged"> -->
+                <a routerLink="/clients">Clients</a>
+            </li>
+            <!-- <li>
+                <a routerLink="/profile">Profile - Temp link</a>
+            </li> -->
+            <li>
+            <!-- <li *ngIf="isLogged"> -->
+                <a routerLink="/new-client">New Client</a>
+            </li>
+        </ul>
+    </nav>
+    
+</aside>
+
+<!-- <p  class="loading">edit works!</p> -->
 
 <div *ngIf="!toEdit && client" class="row justify-content-center">
     <h1 class="row justify-content-center">Details</h1>
     <h4 class="row justify-content-center"> for {{client.FirstName}} {{client.LastName}}</h4>
     <!-- <h2>{{theme.themeName}}</h2> -->
     <!-- <p>Date: <time>{{theme.created_at}}</time></p> -->
-    <p><span class="title">FirstName:</span> <span class="client-value">{{client?.FirstName}}</span> <span class="title">LastName:</span>
+    <p class="data"><span class="title">FirstName:</span> <span class="client-value">{{client?.FirstName}}</span> <span class="title">LastName:</span>
         <span class="client-value">{{client?.LastName}}</span></p>
 
-    <p><span class="title">EGN:</span> <span class="client-value">{{client?.EGN}}</span> <span class="title">Address:</span>
+    <p class="data"><span class="title">EGN:</span> <span class="client-value">{{client?.EGN}}</span> <span class="title">Address:</span>
         <span class="client-value">{{client?.Address}}</span></p>
     <br>
     <button class="btn btn-primary detail" (click)="toEdit=true">Edit client</button>
@@ -84,5 +114,5 @@
 
         </form>
     </div>
-    <div *ngIf="!client">Loading...</div>
 </div>
+<p *ngIf="!client" class="loading">Loading...</p>
