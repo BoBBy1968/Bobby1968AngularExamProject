@@ -18,7 +18,7 @@ export class ClientService {
   ) { }
 
   create(data: { firstName: string; lastName: string; egn: string; address: string }) {
-    return this.http.post<IClient>(`${apiURL}/data/clients`, data)
+    return this.http.post<IClient>(`${apiURL}/data/clients`, data);
       // .pipe(
       //   tap((client) => this.client = client)
       // );
@@ -32,7 +32,7 @@ export class ClientService {
   // }
   
   editClient(data: { firstName: string; lastName: string; egn: string; address: string }, id: string) {
-    return this.http.put<IClient>(`${apiURL}/data/clients/${id}`, data)
+    return this.http.put<IClient>(`${apiURL}/data/clients/${id}`, data);
       // .pipe(
       //   tap((client) => this.client = client)
       // );

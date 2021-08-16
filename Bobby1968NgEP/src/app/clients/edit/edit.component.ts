@@ -33,7 +33,6 @@ export class EditComponent implements OnInit {
     let { firstName, lastName, egn, address } = form.value;
     console.log(firstName, lastName, egn, address);
 
-    //TODO: here comes the code that sends changes to content Service
     const id = this.activatedRoute.snapshot.params.objectId;
     this.clientService.editClient({ firstName, lastName, egn, address }, id).subscribe({
       next: () => {
