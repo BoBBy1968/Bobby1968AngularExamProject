@@ -1,1 +1,20 @@
-<p>profile works!</p>
+<!-- <p>profile works!</p>
+<p>{{user!.name}}</p> -->
+<div *ngIf="user" class="row justify-content-center">
+    <h1 class="row justify-content-center">Details</h1>
+    <div class="row justify-content-center user-data">
+        <h4 class="user-data-title"> Username:  <span >{{user.name}}</span> </h4>
+
+        <h4 class="user-data-title"> Email:  <span >{{user.email}}</span></h4>
+    </div>
+    <!-- <h2>{{theme.themeName}}</h2> -->
+    <!-- <p>Date: <time>{{theme.created_at}}</time></p> -->
+    <!-- <p class="data"><span class="title">FirstName:</span> <span class="client-value">{{user?.FirstName}}</span> <span class="title">LastName:</span>
+        <span class="client-value">{{user?.LastName}}</span></p>
+
+    <p class="data"><span class="title">EGN:</span> <span class="client-value">{{client?.EGN}}</span> <span class="title">Address:</span>
+        <span class="client-value">{{user?.Address}}</span></p>
+    <br> -->
+    <!-- <button class="btn btn-primary detail" (click)="toEdit=true">Edit client</button> -->
+    <button routerLink="/" class="btn btn-primary detail">Cancel</button>
+</div>

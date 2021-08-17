@@ -1,0 +1,18 @@
+.detail{
+    width: 10%;
+}
+
+.user-data{
+    text-align: center;
+}
+
+.user-data-title{
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.user-data-title span{
+    font-size: 20px;
+    font-weight: 700;
+    background-color: lightsteelblue;
+}
