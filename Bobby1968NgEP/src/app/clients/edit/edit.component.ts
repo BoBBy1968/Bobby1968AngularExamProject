@@ -30,11 +30,12 @@ export class EditComponent implements OnInit {
       console.log("The form is not valid!");
       return;
     }
-    let { firstName, lastName, egn, address } = form.value;
-    console.log(firstName, lastName, egn, address);
+    let { firstName, lastName, egn, address, abonatNumber, principal, interest, invoices } = form.value;
+    console.log(firstName, lastName, egn, address, abonatNumber);
+    console.log(form.value);
 
     const id = this.activatedRoute.snapshot.params.objectId;
-    this.clientService.editClient({ firstName, lastName, egn, address }, id).subscribe({
+    this.clientService.editClient({ firstName, lastName, egn, address, abonatNumber, principal, interest, invoices }, id).subscribe({
       next: () => {
         this.router.navigate(['/clients']);
       },

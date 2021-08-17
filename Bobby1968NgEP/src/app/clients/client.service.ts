@@ -11,17 +11,20 @@ let apiURL = environment.apiURL;
 })
 export class ClientService {
 
-  client: IClient | null| undefined = undefined;
+  client: IClient | null | undefined = undefined;
 
   constructor(
     private http: HttpClient,
   ) { }
 
-  create(data: { firstName: string; lastName: string; egn: string; address: string }) {
+  create(data: {
+    firstName: string; lastName: string; egn: string; address: string; abonatNumber: string;
+    principal: string; interest: string; invoices: string;
+  }) {
     return this.http.post<IClient>(`${apiURL}/data/clients`, data);
-      // .pipe(
-      //   tap((client) => this.client = client)
-      // );
+    // .pipe(
+    //   tap((client) => this.client = client)
+    // );
   }
 
   // updateProfile(data: { username: string; email: string; tel: string; }) {
@@ -30,22 +33,25 @@ export class ClientService {
   //       tap((user) => this.user = user)
   //     );
   // }
-  
-  editClient(data: { firstName: string; lastName: string; egn: string; address: string }, id: string) {
+
+  editClient(data: {
+    firstName: string; lastName: string; egn: string; address: string; abonatNumber: string
+    principal: string; interest: string; invoices: string;
+  }, id: string) {
     return this.http.put<IClient>(`${apiURL}/data/clients/${id}`, data);
-      // .pipe(
-      //   tap((client) => this.client = client)
-      // );
+    // .pipe(
+    //   tap((client) => this.client = client)
+    // );
   }
 
-  getAllClients(){
+  getAllClients() {
     return this.http.get<IClient[]>(`${apiURL}/data/clients?sortBy=created%20desc`);
   }
 
   // loadTheme(id: string) {
-    //   return this.http.get<ITheme>(`http://localhost:3000/api/themes/${id}`, { withCredentials: true });
-    // }
-  getClient(id: string){
+  //   return this.http.get<ITheme>(`http://localhost:3000/api/themes/${id}`, { withCredentials: true });
+  // }
+  getClient(id: string) {
     return this.http.get<IClient>(`${apiURL}/data/clients/${id}`);
   }
 }

@@ -22,10 +22,10 @@ export class NewComponent {
       return;
     }
 
-    let { firstName, lastName, egn, address } = form.value;
-    console.log(firstName, lastName, egn, address);
+    let { firstName, lastName, egn, address, abonatNumber, principal, interest, invoices } = form.value;
+    console.log(firstName, lastName, egn, address, abonatNumber);
 
-    this.clientService.create({ firstName, lastName, egn, address }).subscribe({
+    this.clientService.create({ firstName, lastName, egn, address, abonatNumber, principal, interest, invoices }).subscribe({
       next: () => {
         this.router.navigate(['/clients']);
       },
