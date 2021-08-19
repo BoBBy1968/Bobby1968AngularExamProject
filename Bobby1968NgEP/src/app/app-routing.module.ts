@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppealComponent } from './clients/actions/appeal/appeal.component';
+import { ClaimComponent } from './clients/actions/claim/claim.component';
+import { ExecutionComponent } from './clients/actions/execution/execution.component';
 import { AllComponent } from './clients/all/all.component';
 import { EditComponent } from './clients/edit/edit.component';
 import { NewComponent } from './clients/new/new.component';
@@ -42,6 +45,18 @@ const routes: Routes = [
   {
     path: 'new-client',
     component: NewComponent
+  },
+  {
+    path: 'claim',
+    component: ClaimComponent
+  },
+  {
+    path: 'execution',
+    component: ExecutionComponent
+  },
+  {
+    path: 'appeal',
+    component: AppealComponent
   },
   {
     path: '**',

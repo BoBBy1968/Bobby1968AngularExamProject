@@ -16,6 +16,9 @@ import { NewComponent } from './clients/new/new.component';
 import { ClientService } from './clients/client.service';
 import { EditComponent } from './clients/edit/edit.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
+import { ClaimComponent } from './clients/actions/claim/claim.component';
+import { ExecutionComponent } from './clients/actions/execution/execution.component';
+import { AppealComponent } from './clients/actions/appeal/appeal.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
     AllComponent,
     NewComponent,
     EditComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ClaimComponent,
+    ExecutionComponent,
+    AppealComponent
   ],
   imports: [
     BrowserModule,

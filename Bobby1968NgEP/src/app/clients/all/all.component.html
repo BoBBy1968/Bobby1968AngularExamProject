@@ -15,8 +15,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let client of clients" [routerLink]="['/clients', client.objectId]">
-                <td>#</td>
+            <tr *ngFor="let client of clients; let i = index" [routerLink]="['/clients', client.objectId]">
+                <td>{{i+1}}</td>
                 <td>{{client.FirstName}}</td>
                 <td>{{client.LastName}}</td>
                 <td>{{client.EGN}}</td>

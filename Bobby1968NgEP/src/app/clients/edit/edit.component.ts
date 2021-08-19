@@ -46,7 +46,7 @@ export class EditComponent implements OnInit {
   }
 
   getClient(){
-    this.client = undefined;
+    // this.client = undefined;
     const id = this.activatedRoute.snapshot.params.objectId;
     this.clientService.getClient(id).subscribe(client => this.client = client);
   }

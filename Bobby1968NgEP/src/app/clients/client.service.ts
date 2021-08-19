@@ -52,6 +52,9 @@ export class ClientService {
   //   return this.http.get<ITheme>(`http://localhost:3000/api/themes/${id}`, { withCredentials: true });
   // }
   getClient(id: string) {
-    return this.http.get<IClient>(`${apiURL}/data/clients/${id}`);
+    return this.http.get<IClient>(`${apiURL}/data/clients/${id}`)
+    .pipe(
+      tap((client) => this.client = client)
+    );
   }
 }
