@@ -4,7 +4,7 @@
 }
 
 .container{
-    margin: 0px auto;
+    margin: 30px auto 30px auto;
     padding-left: 100px;
     padding-right: 100px;
     width: 1000px;
@@ -37,20 +37,12 @@ h4{
     margin-bottom: 10px;
 }
 
-main{
-
-}
-
 p, .evidence-title{
     margin-bottom: 20px;
 }
 
 .evidence-text{
     margin-bottom: 0px;
-}
-
-.evidence-title{
-
 }
 
 .initial{
@@ -62,7 +54,7 @@ main p{
 }
 
 .data{
-    font-weight: 500;
+    font-weight: 800;
 }
 
 #sign{
